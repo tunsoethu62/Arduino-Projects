@@ -30,4 +30,84 @@ The goal is to blink:
 * Timing using delays
 * Using functions to simplify repetitive code
 
-Coming soon: **Lesson 2 – Traffic Light System**
+# Arduino Projects
+
+## Lesson2: Binary Counting with LEDs
+
+This project demonstrates how to represent numbers **1 to 10 in binary** using **four LEDs** connected to digital pins 8, 9, 10, and 11 on an Arduino board.
+
+The code for this lesson is saved separately as **lessonBinaryLEDs.ino**.
+
+---
+
+## 📘 Project Description
+
+This lesson uses four LEDs to display binary numbers. Each LED represents one binary bit:
+
+* **LED on pin 8** → Least Significant Bit (LSB)
+* **LED on pin 9**
+* **LED on pin 10**
+* **LED on pin 11** → Most Significant Bit (MSB)
+
+The program cycles from **1 to 10**, lighting LEDs according to the binary representation of each number.
+
+Each number stays on for **2 seconds** before switching to the next.
+
+---
+
+## 🧠 What You Learn
+
+* How binary numbers work (1 = 0001, 2 = 0010, 3 = 0011...)
+* How to control multiple LED outputs
+* How to display values using digitalWrite()
+* How timing works using delay()
+* How integers and pin variables make code cleaner
+
+---
+
+## 🔌 Hardware Required
+
+* Arduino Uno (or compatible board)
+* 4 LEDs
+* 4 resistors (220Ω recommended)
+* Jumper wires
+* Breadboard
+
+---
+
+## 🛠️ Wiring Guide
+
+Each LED is connected:
+
+* **Anode (long leg)** → Arduino pins **8, 9, 10, 11**
+* **Cathode (short leg)** → **220Ω resistor** → **GND**
+
+---
+
+## 📊 Binary Table (1 to 10)
+
+| Decimal | Binary | LED pattern (MSB → LSB) |
+| ------- | ------ | ----------------------- |
+| 1       | 0001   | 0001                    |
+| 2       | 0010   | 0010                    |
+| 3       | 0011   | 0011                    |
+| 4       | 0100   | 0100                    |
+| 5       | 0101   | 0101                    |
+| 6       | 0110   | 0110                    |
+| 7       | 0111   | 0111                    |
+| 8       | 1000   | 1000                    |
+| 9       | 1001   | 1001                    |
+| 10      | 1010   | 1010                    |
+
+---
+
+## ▶️ How It Works Step-by-Step
+
+1. Four output pins are defined.
+2. LEDs are turned ON/OFF to match the binary representation of each number.
+3. The pattern stays for **2000 ms (2 seconds)**.
+4. Program loops continuously.
+
+---
+
+
