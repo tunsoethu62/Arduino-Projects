@@ -30,7 +30,6 @@ The goal is to blink:
 * Timing using delays
 * Using functions to simplify repetitive code
 
-# Arduino Projects
 
 ## Lesson2: Binary Counting with LEDs
 
