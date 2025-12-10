@@ -109,4 +109,17 @@ Each LED is connected:
 
 ---
 
+# Potentiometer Voltage Reader (Arduino)
+
+## Overview
+This Arduino sketch reads the analog voltage from a potentiometer on pin A2, prints the voltage to the Serial Monitor, and turns an LED on pin 9 ON only when the voltage reaches 5.0 V.
+
+## How It Works
+- `analogRead(A2)` reads a value from 0–1023 based on the potentiometer position.
+- The code converts this value to voltage using:
+  V2 = (5.0 / 1023.0) * readVal
+- The voltage is printed through Serial at 9600 baud.
+- If the voltage equals 5.0 V, the LED on pin 9 is turned ON.
+- Otherwise, the LED stays OFF.
+- The loop repeats every 500 ms.
 
