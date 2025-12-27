@@ -155,7 +155,62 @@ This Arduino sketch reads the analog voltage from a potentiometer on pin A2, pri
 - PWM range: 0–255
 - ADC resolution: 10-bit (0–1023)
 
-## Extensions
-- Replace scaling with `map()`
-- Add smoothing via averaging
-- Control motor speed instead of LED
+
+# Potentiometer Controlled Buzzer (Arduino)
+
+## Description
+This project demonstrates how to control a **buzzer** using a **potentiometer** with an Arduino.  
+The Arduino continuously reads the analog value from the potentiometer. When this value exceeds a predefined threshold, the buzzer is activated for a short duration.  
+The potentiometer readings are also displayed on the **Serial Monitor** for monitoring and debugging.
+
+---
+
+## Components Used
+- Arduino board (Uno / Nano / Mega)
+- Potentiometer (e.g., 10kΩ)
+- Buzzer
+- Jumper wires
+- Breadboard (optional)
+
+---
+
+## Pin Configuration
+
+| Component       | Arduino Pin |
+|-----------------|-------------|
+| Buzzer (+)      | Digital Pin 8 |
+| Buzzer (–)      | GND |
+| Potentiometer (Middle pin) | A3 |
+| Potentiometer (Side pins)  | 5V, GND |
+
+---
+
+## How It Works
+1. The potentiometer provides a variable voltage between **0–5V**.
+2. `analogRead()` converts this voltage into a value between **0–1023**.
+3. The value is printed to the Serial Monitor.
+4. If the value exceeds **1000**, the buzzer turns ON for **300 ms**, then turns OFF.
+
+---
+
+## Code Behavior
+- Continuous potentiometer monitoring
+- Serial output at **9600 baud**
+- Threshold-based buzzer activation
+
+---
+
+## Customization
+- Adjust the sensitivity by changing the threshold value (`1000`)
+- Modify the buzzer ON time by changing the delay duration
+- Replace `delay()` with `millis()` for non-blocking control
+- Use `tone()` for frequency-based sound output
+
+---
+
+## Notes
+- Analog input range: **0–1023**
+- Ensure correct grounding to avoid unstable readings
+- Suitable for beginners learning analog input and digital output control
+
+---
