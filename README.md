@@ -123,3 +123,39 @@ This Arduino sketch reads the analog voltage from a potentiometer on pin A2, pri
 - Otherwise, the LED stays OFF.
 - The loop repeats every 500 ms.
 
+
+# Arduino Potentiometer LED Control
+
+## Requirements
+- Arduino Uno (or compatible)
+- Potentiometer (≈10kΩ)
+- LED
+- 220Ω resistor
+- Breadboard and jumper wires
+
+## Pin Connections
+- Potentiometer middle pin → A3  
+- Potentiometer sides → 5V, GND  
+- LED anode → Pin 6 (PWM)  
+- LED cathode → GND (through 220Ω resistor)
+
+## Functionality
+- Reads analog value from potentiometer (0–1023)
+- Scales value to PWM range (0–255)
+- Controls LED brightness using `analogWrite`
+- Prints PWM value to Serial Monitor (9600 baud)
+
+## Core Logic
+- `analogRead(A3)` → potentiometer input
+- `LEDVal = (255.0 / 1023.0) * potVal`
+- `analogWrite(6, LEDVal)`
+
+## Notes
+- Pin 6 supports PWM
+- PWM range: 0–255
+- ADC resolution: 10-bit (0–1023)
+
+## Extensions
+- Replace scaling with `map()`
+- Add smoothing via averaging
+- Control motor speed instead of LED
